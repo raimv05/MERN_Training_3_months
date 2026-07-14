@@ -1,0 +1,328 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        nav ul li{
+            display:flex;
+            color:orange;
+            cursor:pointer;
+            padding-bottom: 30px;
+        }
+
+        nav ul{
+            display:flex;
+            gap:30px;
+            justify-content:flex-end;
+            list-style:none;
+            margin:0px;
+            padding:0px;
+            font-family: 'Courier New';
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+        h1{
+        color:orange;
+         }
+
+
+
+        h3{
+        color:orange;
+         }
+
+         .logo{
+            font-size:24px;
+            font-weight:bold;
+            color:orange;
+            font-size:30px;
+        }
+
+        span{
+            color:red;
+            font-size: 30px;
+            
+        }
+         
+        .icon{
+            margin-right:8px;
+        }
+
+        header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 40px;
+            background-color:grey;
+        }
+
+        .links
+        {
+            align-items:"center";
+        }
+
+        button{
+            text-align:center;
+            padding: 10px;
+            cursor:pointer;
+        }
+
+        .hero{
+            background-image: url(data:image/jpeg;base64,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);
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position:center;
+            width:100%;
+            min-height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+
+            color:white;
+        }
+
+        .hero-content h1{
+            font-size:40px;
+            margin-top:200px;
+            margin-bottom:10px;
+        }
+
+        .hero-content h2{
+            font-size:30px;
+            margin-bottom:16px;
+            color:chocolate;
+        }
+
+        .hero-content p{
+            font-size:30px;
+            margin-bottom:16px;
+            color:chocolate;
+        }
+    </style>
+</head>
+
+
+
+
+
+<body>    
+    <header>
+        <div class="logo">
+            <span class="icon">&#10084;</span>Healthy life
+        </div>
+
+       <div class="links">
+        <nav>
+        <ul>
+            <li>HOME</li>
+            <LI>DIET</LI>
+            <LI>EXERCISE</LI>
+            <LI>MENTAL HEALTH</LI>
+            <LI>TIPS</LI>
+            <LI>RESOURCES</LI>
+            <LI>CONTACT</LI>
+        </ul>
+    </nav>
+    </div>
+    </header>
+    
+    <div class="hero">
+    <div class="hero-content">
+    <h1>HEALTHY LIFESTYLE GUIDE</h1>
+    <h2>Simple steps to a better life</h2>
+    <p>A healthy lifetsyle helps you stay fit, feel good and enjoy life to the fullest.</p>
+    <button>Start your journey today</button>
+    </div>
+    </div>
+
+    <div>
+    <H3>WELCOME</H3>
+    <P>A healthy lifetyle means taking care of your body and mind through good habits.
+        It is not about following strict diets or spending hours in the gym.
+        Small daily changes, such as eating healthy food, exercising regularly, getting enough sleep and staying positive, can make a big difference.
+        A healthy lifestyle helps us stay active, prevents diseases, and improves our overall quality of life.
+    </P>
+    </div>
+
+
+
+    <h3>What is a healthy lifetsyle ?</h3>
+    <p>A healthy lifetsyle is a way of living that keeps our body physically fit and your mind mentally healthy.
+        It includes eating balanced meals, drinking enough water, exercising regulary, managing stress, and avoiding harmful habits like smoking and excessive junk food consumption.
+    </p>
+
+
+
+    <h3>Benefits of healthy lifestyle</h3>
+    <ul>
+        <li>Improves physical fitness</li>
+        <li>Increases energy levels</li>
+        <li>Boosts immunity</li>
+        <li>Reduces the risk of diseases</li>
+    </ul>
+
+    <ul>
+        <li>Helps maintain a healthy weight</li>
+        <li>Improves mental health and concentration</li>
+        <li>Promotes better sleep</li>
+        <li>Increases life exceptancy</li>
+    </ul>
+    <img src="" alt="lady">
+    
+    
+    
+    <h3>Healthy Eating Habits</h3>
+    <img src="" alt="fruits">
+    <h4>Eat More</h4>
+    <ul>
+        <li>Fresh fruits</li>
+        <li>Green vegetables</li>
+        <li>Whole grains</li>
+        <li>Milk and dairy products</li>
+        <li>Nuts and seeds</li>
+    </ul>
+
+    <h4>Avoid</h4>
+    <ul>
+        <li>Junk food</li>
+        <li>Sugary drinks</li>
+        <li>Fried snacks</li>
+        <li>Excessive sweets</li>
+        <li>Smoking/Drinking</li>
+    </ul>
+
+    <h3>Daily Exercise Routine</h3>
+    <table border="6">
+        <tr>
+            <th>Exercise</th>
+            <th>Duration</th>
+            <th>Benefits</th>
+        </tr>
+
+        <tr>
+            <td>Walking</td>
+            <td>30 minutes</td>
+            <td>Improves heart health</td>
+        </tr>
+
+        <tr>
+            <td>Jogging</td>
+            <td>20 minutes</td>
+            <td>Builds stamina</td>
+        </tr>
+
+        <tr>
+            <td>Yoga</td>
+            <td>30 minutes</td>
+            <td>Reduces stress</td>
+        </tr>
+
+        <tr>
+            <td>Cycling</td>
+            <td>30 minutes</td>
+            <td>Strengthens muscles</td>
+        </tr>
+
+        <tr>
+            <td>Streching</td>
+            <td>10 minutes</td>
+            <td>Improves flexibility</td>
+        </tr>
+    </table>
+
+
+
+    <h3>Importance of Drinking Water</h3>
+    <p>Water is essential for every part of our body. It regulates body temprature, aids diegstion, imporves skin health, and prevents dehydration. Driking 8-10 glasses of water every day is a healthy habit.</p>
+
+
+    <h3>Conclusion</h3>
+    <p>A healthy lifestyle is one of the greatest investments you can make in youreself. Healthy eating, regular exercise, proper sleep, and a positive mindset help us live a happier and more productive life. Remember, every small healthy habit you develop today will benefit you in the future.</p>
+</body>
+</html>
+ -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy life</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="./images/prog1.jpg" type="image/x-icon">
+    <style>
+        #header{
+            background-color:grey;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <footer>
+        <p>&copy; 2024 Healthy Life Blog. All rights reserved.</p>
+    </footer>
+    <h1>Healthy Life</h1>
+    <h2>Welcome to the Healthy Life Blog</h2>
+    <h3>Latest Articles</h3>
+    <h4>1. 10 Tips for a Healthier Lifestyle</h4>
+    <h5>Discover simple changes you can make to improve your overall well-being.</h5>
+    <h6>2. The Importance of Regular Exercise</h6>
+    <p>Learn how staying active can boost your energy, mood, and longevity.</p>
+    <img src="./images/prog1.jpg" alt="Exercise Image">
+    <ul>
+        <li> Nutrition Basics: Eating for Optimal Health</li>
+        <li> Mental Health Matters: Strategies for Stress Management</li>
+        <li> Sleep Hygiene: Tips for a Restful Night</li>
+    </ul>
+
+    <ol>
+        <li> Hydration: The Key to a Healthy Body</li>
+        <li> Mindful Eating: How to Listen to Your Body</li>
+        <li> Building a Sustainable Fitness Routine</li>
+    </ol>
+ 
+    <table border="1">
+        <tr>
+            <th>Article</th>
+            <th>Author</th>
+            <th>Date</th>
+        </tr>
+        <tr>
+            <td>10 Tips for a Healthier Lifestyle</td>
+            <td>Jane Doe</td>
+            <td>January 15, 2024</td>
+        </tr>
+        <tr>
+            <td>The Importance of Regular Exercise</td>
+            <td>John Smith</td>
+            <td>February 10, 2024</td>
+        </tr>
+        <tr>
+            <td>Nutrition Basics: Eating for Optimal Health</td>
+            <td>Emily Johnson</td>
+            <td>March 5, 2024</td>
+        </tr>
+    </table>
+
+    <iframe  src="./index (1).html" title="YouTube video player" >
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_parent">Hi</a>
+         
+    </iframe>
+         
+         <div id="header">
+<h1>Healthy Life</h1>
+         </div>
+</body>
+</html>

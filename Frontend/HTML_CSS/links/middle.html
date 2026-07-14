@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>middle.html</title>
+<style>
+  body{
+    margin:0;
+    font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:#eef1fb;
+    color:#1c2033;
+    padding:18px;
+  }
+  .badge{
+    display:inline-block;
+    background:rgba(79,209,165,0.18);
+    color:#0f6e56;
+    font-family:"SFMono-Regular",Consolas,monospace;
+    font-size:12px;
+    padding:4px 10px;
+    border-radius:20px;
+    margin-bottom:10px;
+  }
+  h1{font-size:16px;margin:0 0 4px}
+  p{color:#555b7a;font-size:13px;margin:0 0 14px}
+  iframe{
+    width:100%;
+    height:340px;
+    border:2px solid #4fd1a5;
+    border-radius:8px;
+    background:#fff;
+  }
+  .frame-label{
+    font-family:"SFMono-Regular",Consolas,monospace;
+    font-size:11.5px;
+    color:#0f6e56;
+    margin-bottom:6px;
+  }
+</style>
+</head>
+<body>
+  <div id="warning" style="display:none;background:#f27d7d;color:#4a0f0f;padding:12px 14px;border-radius:8px;margin-bottom:14px;font-size:12.5px;font-weight:600;">
+    ⚠️ You opened middle.html directly — open outer.html instead so the nesting works.
+  </div>
+
+  <span class="badge">LEVEL 2 — middle.html</span>
+  <h1>I'm loaded inside an iframe in outer.html</h1>
+  <p>I contain another iframe, pointing to inner.html, where the test links actually live.</p>
+  <div class="frame-label">↓ iframe pointing to inner.html</div>
+  <iframe src="inner.html" title="inner.html"></iframe>
+
+  <script>
+    if (window.self === window.top) {
+      document.getElementById('warning').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>target.html — you landed here</title>
+<style>
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:-apple-system,"Segoe UI",Roboto,sans-serif;
+    background:#0f6e56;
+    color:#e7fbf3;
+    text-align:center;
+    padding:20px;
+  }
+  h1{font-size:20px;margin:0 0 8px}
+  p{font-size:13.5px;color:#bdf0da;margin:0}
+</style>
+</head>
+<body>
+  <div>
+    <h1>✅ You landed on target.html</h1>
+    <p id="diagnosis" style="font-size:15px;font-weight:600;margin:16px 0 4px"></p>
+    <p style="font-size:12.5px;color:#bdf0da">This text is computed live by JavaScript — it's the actual proof, not just the color.</p>
+  </div>
+  <script>
+    const isTopWindow   = window.self === window.top;
+    const isParentSelf  = window.self === window.parent;
+    let msg;
+    if (isTopWindow) {
+      msg = "This IS the top-level browser tab → target=\"_top\" (or you opened this file directly)";
+    } else if (isParentSelf) {
+      msg = "This frame's parent is the top window → target=\"_parent\" replaced the middle.html iframe";
+    } else {
+      msg = "This frame still has a parent above it → target=\"_self\" only replaced the innermost iframe";
+    }
+    document.getElementById('diagnosis').textContent = msg;
+  </script>
+</body>
+</html>
